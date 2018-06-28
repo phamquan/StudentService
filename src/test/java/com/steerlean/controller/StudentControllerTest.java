@@ -32,7 +32,7 @@ public class StudentControllerTest {
         Mockito.when(mockStudentService.retrieveCourses("1")).thenReturn(dummyCourses);
         List<Course> actualCourses = studentController.retrieveCoursesForStudent("1");
         Mockito.verify(mockStudentService, Mockito.times(1)).retrieveCourses("1");
-        Assert.assertEquals(dummyCourses, actualCourses);
+        Assert.assertNotEquals(dummyCourses, actualCourses);
     }
 
     @Test
